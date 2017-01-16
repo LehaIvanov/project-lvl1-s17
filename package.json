@@ -1,10 +1,12 @@
 {
   "name": "brain-games-lehaivanov",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,8 @@
     "babel-preset-env": "1.1.8",
     "babel-preset-stage-0": "6.16.0"
   },
-  "scripts": {
-    "babel-node": "babel-node",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+  "dependencies": {
+    "readline-sync": "^1.4.5"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
