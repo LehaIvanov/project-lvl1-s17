@@ -6,7 +6,8 @@
   "scripts": {
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "eslint": "eslint src; exit 0"
   },
   "repository": {
     "type": "git",
@@ -19,13 +20,17 @@
   },
   "homepage": "https://github.com/LehaIvanov/project-lvl1-s17#readme",
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-core": "6.21.0",
-    "babel-preset-env": "1.1.8",
-    "babel-preset-stage-0": "6.16.0"
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "babel-eslint": "*"
   },
   "dependencies": {
-    "readline-sync": "^1.4.5"
+    "readline-sync": "*"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
