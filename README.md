@@ -1,7 +1,7 @@
 # project-lvl1-s17
 
-<a href="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17"><img src="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/gpa.svg" /></a>
+[![Code Climate](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/gpa.svg)](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17)
 
-<a href="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/coverage"><img src="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/coverage.svg" /></a>
+[![Test Coverage](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/coverage.svg)](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/coverage)
 
-<a href="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17"><img src="https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/issue_count.svg" /></a>
+[![Issue Count](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17/badges/issue_count.svg)](https://codeclimate.com/github/LehaIvanov/project-lvl1-s17)
