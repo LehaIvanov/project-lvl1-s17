@@ -1,6 +1,6 @@
 {
   "name": "brain-games-lehaivanov",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
     "readline-sync": "*"
   },
   "bin": {
+    "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js"
   }
 }
