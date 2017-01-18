@@ -30,7 +30,8 @@
     "babel-eslint": "*"
   },
   "dependencies": {
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "hexlet-pairs": "*"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
