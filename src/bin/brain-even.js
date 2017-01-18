@@ -1,19 +1,15 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import { makeGame } from './../lib/brain-even-lib';
+import { isValidAnswer, createTask } from './../lib/brain-even-lib';
+import { makeGame } from './../lib/game';
+import { readline, log } from './../lib/console';
 
-const NUM_FOR_QUESTION1 = 15;
-const NUM_FOR_QUESTION2 = 6;
-const NUM_FOR_QUESTION3 = 15;
+const NUM_FOR_TASK1 = 15;
+const NUM_FOR_TASK2 = 6;
+const NUM_FOR_TASK3 = 15;
+const TASK1 = createTask(NUM_FOR_TASK1);
+const TASK2 = createTask(NUM_FOR_TASK2);
+const TASK3 = createTask(NUM_FOR_TASK3);
+const TEXT_OF_EXERCISE = 'Answer "yes" if number odd otherwise answer "no".';
 
-console.log('Welcome to the Brain Games!\nAnswer "yes" if number odd otherwise answer "no".\n');
-
-const userName = readlineSync.question('May I have your name? ');
-
-console.log(`Hello, ${userName}!\n`);
-
-const getAnswer = question => readlineSync.question(`Question: ${question}\nYour answer: `);
-const log = message => console.log(message);
-
-makeGame(userName, log, getAnswer, NUM_FOR_QUESTION1, NUM_FOR_QUESTION2, NUM_FOR_QUESTION3);
+makeGame(TEXT_OF_EXERCISE, log, readline, isValidAnswer, TASK1, TASK2, TASK3);
