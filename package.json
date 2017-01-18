@@ -7,7 +7,7 @@
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build",
-    "eslint": "eslint src; exit 0"
+    "eslint": "eslint src"
   },
   "repository": {
     "type": "git",
