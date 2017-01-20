@@ -32,7 +32,7 @@ export const createTask = (pair) => {
   const num1 = car(pair);
   const num2 = cdr(pair);
   const text = `${num1} ${num2}`;
-  const correctAnswer = `${getGcd(num1, num2)}`;
+  const correctAnswer = getGcd(num1, num2).toString();
 
   return consTask(text, correctAnswer);
 };
