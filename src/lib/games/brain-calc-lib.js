@@ -1,5 +1,5 @@
-import { cons as consTask } from './task';
-import { toString, getResult } from './expression';
+import { cons as consTask } from './../task';
+import { toString, getResult } from './../expression';
 
 export const isValidAnswer = answer => answer !== '';
 

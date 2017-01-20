@@ -1,4 +1,4 @@
-import { cons as consTask } from './task';
+import { cons as consTask } from './../task';
 
 export const isValidAnswer = answer => answer === 'yes' || answer === 'no';
 

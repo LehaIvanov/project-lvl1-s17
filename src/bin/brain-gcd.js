@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { cons as consPair } from 'hexlet-pairs';
-import { isValidAnswer, createTask } from './../lib/brain-gcd-lib';
+import { isValidAnswer, createTask } from './../lib/games/brain-gcd-lib';
 import { makeGame } from './../lib/game';
 import { readline, log } from './../lib/console';
 

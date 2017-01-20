@@ -1,5 +1,5 @@
 import { car, cdr } from 'hexlet-pairs';
-import { cons as consTask } from './task';
+import { cons as consTask } from './../task';
 
 export const isValidAnswer = answer => answer !== '';
 

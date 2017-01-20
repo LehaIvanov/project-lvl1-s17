@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { isValidAnswer, createTask } from './../lib/brain-even-lib';
+import { isValidAnswer, createTask } from './../lib/games/brain-even-lib';
 import { makeGame } from './../lib/game';
 import { readline, log } from './../lib/console';
 

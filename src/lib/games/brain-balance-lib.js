@@ -1,5 +1,5 @@
-import { cons as consTask } from './task';
-import { getBalanceNumber } from './balance-number';
+import { cons as consTask } from './../task';
+import { getBalanceNumber } from './../balance-number';
 
 export const isValidAnswer = answer => answer !== '';
 
