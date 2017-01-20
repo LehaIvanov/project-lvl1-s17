@@ -5,7 +5,7 @@ export const isValidAnswer = answer => answer !== '';
 
 export const createTask = (expression) => {
   const text = toString(expression);
-  const correctAnswer = `${getResult(expression)}`;
+  const correctAnswer = getResult(expression).toString();
 
   return consTask(text, correctAnswer);
 };
