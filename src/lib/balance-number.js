@@ -1,41 +1,22 @@
 import { getArrayFromNumber, compare as compareNumber, getNumberFromArray } from './number-helper';
 
-export const balancing = (arr) => {
+export const balanceNumberAsArray = (arr) => {
   const length = arr.length;
 
-  if (arr[length - 1] - arr[0] <= 1) {
+  if (length === 0 || length === 1 || arr[length - 1] - arr[0] <= 1) {
     return arr;
   }
 
-  const newArr = [];
-  const changedFirstElem = arr[0] + 1;
-  const changedLastElem = arr[length - 1] - 1;
-  let index = 1;
+  const newArr = arr.slice(1, length - 1);
 
-  while (arr[index] < changedFirstElem && index < length - 1) {
-    newArr.push(arr[index]);
-    index += 1;
-  }
+  newArr.push(arr[0] + 1);
+  newArr.push(arr[length - 1] - 1);
 
-  newArr.push(changedFirstElem);
-
-  while (arr[index] < changedLastElem && index < length - 1) {
-    newArr.push(arr[index]);
-    index += 1;
-  }
-
-  newArr.push(changedLastElem);
-
-  while (index < length - 1) {
-    newArr.push(arr[index]);
-    index += 1;
-  }
-
-  return balancing(newArr);
+  return balanceNumberAsArray(newArr.sort(compareNumber));
 };
 
 export const getBalanceNumber = (n) => {
   const arr = getArrayFromNumber(n).sort(compareNumber);
 
-  return getNumberFromArray(balancing(arr));
+  return getNumberFromArray(balanceNumberAsArray(arr));
 };

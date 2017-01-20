@@ -10,7 +10,7 @@ export const getLength = series => car(series);
 
 export const getProgression = series => cdr(series);
 
-export const elementByIndex = (series, index) => {
+export const getElementByIndex = (series, index) => {
   const length = getLength(series);
 
   if (index < 0 || index >= length) {
