@@ -13,4 +13,4 @@ const TASK2 = createTask(EXPRESSION_FOR_TASK2);
 const TASK3 = createTask(EXPRESSION_FOR_TASK3);
 const TEXT_OF_EXERCISE = 'What is the result of the expression?';
 
-makeGame(TEXT_OF_EXERCISE, log, readline, isValidAnswer, TASK1, TASK2, TASK3);
+makeGame(TEXT_OF_EXERCISE, log, readline, isValidAnswer, [TASK1, TASK2, TASK3]);

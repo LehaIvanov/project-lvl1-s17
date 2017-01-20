@@ -1,6 +1,6 @@
 {
   "name": "brain-games-lehaivanov",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-balance": "dist/bin/brain-balance.js"
   }
 }

@@ -13,4 +13,4 @@ const TASK2 = createTask(PAIR_FOR_TASK2);
 const TASK3 = createTask(PAIR_FOR_TASK3);
 const TEXT_OF_EXERCISE = 'Find the greatest common divisor of given numbers.';
 
-makeGame(TEXT_OF_EXERCISE, log, readline, isValidAnswer, TASK1, TASK2, TASK3);
+makeGame(TEXT_OF_EXERCISE, log, readline, isValidAnswer, [TASK1, TASK2, TASK3]);
