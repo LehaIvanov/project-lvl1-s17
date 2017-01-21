@@ -1,6 +1,11 @@
+import readlineSync from 'readline-sync';
 import { getCorrectAnswer, getText as getQuestion } from './task';
 
-export const askQuestion = (task, readline, isValidAnswer) => {
+const consoleReadline = message => readlineSync.question(message);
+
+const consoleLog = message => console.log(message);
+
+const askQuestion = (task, readline, isValidAnswer) => {
   const question = getQuestion(task);
   const answer = readline(`Question: ${question}\nYour answer: `);
 
@@ -11,7 +16,7 @@ export const askQuestion = (task, readline, isValidAnswer) => {
   return answer;
 };
 
-export const iterGame = (log, readline, isValidAnswer, task) => {
+const iterGame = (log, readline, isValidAnswer, task) => {
   const answer = askQuestion(task, readline, isValidAnswer);
   const correctAnswer = getCorrectAnswer(task);
   const isCorrect = answer === correctAnswer;
@@ -25,19 +30,21 @@ export const iterGame = (log, readline, isValidAnswer, task) => {
   return isCorrect;
 };
 
-export const makeGame = (gameText, log, readline, isValidAnswer, tasks) => {
-  log(`Welcome to the Brain Games!\n${gameText}\n`);
+export default (settings, generateTask, log = consoleLog, readline = consoleReadline) => {
+  const { countIterations = 3, isValidAnswer, taskText } = settings;
+
+  log(`Welcome to the Brain Games!\n${taskText}\n`);
 
   const userName = readline('May I have your name? ');
   let index = 0;
 
   log(`Hello, ${userName}!\n`);
 
-  while (index < tasks.length && iterGame(log, readline, isValidAnswer, tasks[index])) {
+  while (index < countIterations && iterGame(log, readline, isValidAnswer, generateTask())) {
     index += 1;
   }
 
-  if (index === tasks.length) {
+  if (index === countIterations) {
     log(`Congratulations, ${userName}!\n`);
   } else {
     log(`Let's try again, ${userName}!`);
