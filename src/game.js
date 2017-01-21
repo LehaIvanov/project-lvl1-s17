@@ -30,8 +30,8 @@ const iterGame = (log, readline, isValidAnswer, task) => {
   return isCorrect;
 };
 
-export default (settings, generateTask, log = consoleLog, readline = consoleReadline) => {
-  const { countIterations = 3, isValidAnswer, taskText } = settings;
+export default (setting, generateTask, log = consoleLog, readline = consoleReadline) => {
+  const { iterationsCount = 3, isValidAnswer, taskText } = setting;
 
   log(`Welcome to the Brain Games!\n${taskText}\n`);
 
@@ -40,11 +40,11 @@ export default (settings, generateTask, log = consoleLog, readline = consoleRead
 
   log(`Hello, ${userName}!\n`);
 
-  while (index < countIterations && iterGame(log, readline, isValidAnswer, generateTask())) {
+  while (index < iterationsCount && iterGame(log, readline, isValidAnswer, generateTask())) {
     index += 1;
   }
 
-  if (index === countIterations) {
+  if (index === iterationsCount) {
     log(`Congratulations, ${userName}!\n`);
   } else {
     log(`Let's try again, ${userName}!`);

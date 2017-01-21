@@ -37,11 +37,11 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'What is the result of the expression?',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };

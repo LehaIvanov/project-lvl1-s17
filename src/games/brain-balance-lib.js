@@ -54,12 +54,12 @@ const generateTask = () => {
   return consTask(number, correctAnswer);
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'Balance the given number.',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };
 

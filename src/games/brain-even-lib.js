@@ -14,11 +14,11 @@ const generateTask = () => {
   return consTask(number, correctAnswer);
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'Answer "yes" if number odd otherwise answer "no".',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };

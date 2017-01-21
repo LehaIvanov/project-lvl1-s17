@@ -55,11 +55,11 @@ const generateTask = () => {
   return consTask(getNotPrimeGreaterOrEqualNumber(number), 'no');
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'Answer "yes" if number prime otherwise answer "no".',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };

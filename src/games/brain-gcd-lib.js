@@ -41,11 +41,11 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'Find the greatest common divisor of given numbers.',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };

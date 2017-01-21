@@ -36,11 +36,11 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const settings = {
+const setting = {
   isValidAnswer,
   taskText: 'What number is missing in this progression?',
 };
 
 export default () => {
-  makeGame(settings, generateTask);
+  makeGame(setting, generateTask);
 };
