@@ -15,3 +15,24 @@ export const getArrayFromNumber = (n) => {
 };
 
 export const getNumberFromArray = arr => arr.reduce((acc, current) => (acc * 10) + current, 0);
+
+export const isPrime = (n) => {
+  if (n < 2) {
+    return false;
+  }
+
+  const maxDivider = Math.floor(Math.sqrt(n));
+  const iter = (divider) => {
+    if (divider > maxDivider) {
+      return true;
+    }
+
+    if (n % divider === 0) {
+      return false;
+    }
+
+    return iter(divider + 1);
+  };
+
+  return iter(2);
+};
