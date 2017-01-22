@@ -1,10 +1,11 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const LENGTH_OF_PROGRESSION = 10;
 const MIN_START_NUM = 1;
 const MAX_START_NUM = 15;
+const TASK_TEXT = 'What number is missing in this progression?';
 
 const getElementByIndex = (startNumber, step, index) => startNumber + (step * index);
 
@@ -36,11 +37,6 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'What number is missing in this progression?',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };

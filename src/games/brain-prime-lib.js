@@ -1,9 +1,10 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const MIN_NUMBER = 2;
 const MAX_NUMBER = 1000;
+const TASK_TEXT = 'Answer "yes" if number prime otherwise answer "no".';
 
 const isPrimeNumber = (n) => {
   if (n < 2) {
@@ -55,11 +56,6 @@ const generateTask = () => {
   return consTask(getNotPrimeGreaterOrEqualNumber(number), 'no');
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'Answer "yes" if number prime otherwise answer "no".',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };

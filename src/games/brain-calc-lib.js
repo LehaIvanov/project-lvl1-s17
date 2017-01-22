@@ -1,10 +1,11 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 20;
 const OPERATORS = ['-', '+', '*'];
+const TASK_TEXT = 'What is the result of the expression?';
 
 const getQuestion = (operator, number1, number2) => `${number1} ${operator} ${number2}`;
 
@@ -37,11 +38,6 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'What is the result of the expression?',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };

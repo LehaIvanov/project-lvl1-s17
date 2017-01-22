@@ -1,9 +1,10 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 999;
+const TASK_TEXT = 'Answer "yes" if number odd otherwise answer "no".';
 
 const isValidAnswer = answer => answer === 'yes' || answer === 'no';
 
@@ -14,11 +15,6 @@ const generateTask = () => {
   return consTask(number, correctAnswer);
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'Answer "yes" if number odd otherwise answer "no".',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };

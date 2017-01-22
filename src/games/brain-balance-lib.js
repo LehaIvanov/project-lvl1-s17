@@ -1,9 +1,10 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const MIN_NUMBER = 100;
 const MAX_NUMBER = 9999;
+const TASK_TEXT = 'Balance the given number.';
 
 const compareNumber = (a, b) => a - b;
 
@@ -54,12 +55,7 @@ const generateTask = () => {
   return consTask(number, correctAnswer);
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'Balance the given number.',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };
 

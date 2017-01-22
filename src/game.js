@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getCorrectAnswer, getText as getQuestion } from './task';
 
+const GAME_ROUNDS_COUNT = 3;
+
 const consoleReadline = message => readlineSync.question(message);
 
 const consoleLog = message => console.log(message);
@@ -30,9 +32,8 @@ const iterGame = (log, readline, isValidAnswer, task) => {
   return isCorrect;
 };
 
-export default (setting, generateTask, log = consoleLog, readline = consoleReadline) => {
-  const { iterationsCount = 3, isValidAnswer, taskText } = setting;
-
+export default (taskText, generateTask, isValidAnswer, log = consoleLog,
+    readline = consoleReadline) => {
   log(`Welcome to the Brain Games!\n${taskText}\n`);
 
   const userName = readline('May I have your name? ');
@@ -40,11 +41,11 @@ export default (setting, generateTask, log = consoleLog, readline = consoleReadl
 
   log(`Hello, ${userName}!\n`);
 
-  while (index < iterationsCount && iterGame(log, readline, isValidAnswer, generateTask())) {
+  while (index < GAME_ROUNDS_COUNT && iterGame(log, readline, isValidAnswer, generateTask())) {
     index += 1;
   }
 
-  if (index === iterationsCount) {
+  if (index === GAME_ROUNDS_COUNT) {
     log(`Congratulations, ${userName}!\n`);
   } else {
     log(`Let's try again, ${userName}!`);

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import makeGame from './../games/brain-even-lib';
+import startGame from './../games/brain-even-lib';
 
-makeGame();
+startGame();

@@ -1,9 +1,10 @@
 import { cons as consTask } from './../task';
 import random from './../random';
-import makeGame from './../game';
+import startGame from './../game';
 
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 100;
+const TASK_TEXT = 'Find the greatest common divisor of given numbers.';
 
 const isValidAnswer = answer => answer !== '';
 
@@ -41,11 +42,6 @@ const generateTask = () => {
   return consTask(question, correctAnswer);
 };
 
-const setting = {
-  isValidAnswer,
-  taskText: 'Find the greatest common divisor of given numbers.',
-};
-
 export default () => {
-  makeGame(setting, generateTask);
+  startGame(TASK_TEXT, generateTask, isValidAnswer);
 };
