@@ -2,16 +2,16 @@ import { cons as consTask } from './../task';
 import random from './../random';
 import startGame from './../game';
 
-const LENGTH_OF_PROGRESSION = 10;
-const MIN_START_NUM = 1;
-const MAX_START_NUM = 15;
-const TASK_TEXT = 'What number is missing in this progression?';
+const lengthOfProgression = 10;
+const minStartNum = 1;
+const maxStartNum = 15;
+const taskText = 'What number is missing in this progression?';
 
 const getElementByIndex = (startNumber, step, index) => startNumber + (step * index);
 
 const getQuestion = (startNumber, step, indexHiddenElement) => {
   const iter = (index, acc) => {
-    if (index === LENGTH_OF_PROGRESSION) {
+    if (index === lengthOfProgression) {
       return acc;
     }
 
@@ -28,9 +28,9 @@ const getQuestion = (startNumber, step, indexHiddenElement) => {
 const isValidAnswer = answer => answer !== '';
 
 const generateTask = () => {
-  const startNumber = random(MIN_START_NUM, MAX_START_NUM);
-  const step = random(MIN_START_NUM, MAX_START_NUM);
-  const indexHiddenElement = random(0, LENGTH_OF_PROGRESSION - 1);
+  const startNumber = random(minStartNum, maxStartNum);
+  const step = random(minStartNum, maxStartNum);
+  const indexHiddenElement = random(0, lengthOfProgression - 1);
   const question = getQuestion(startNumber, step, indexHiddenElement);
   const correctAnswer = getElementByIndex(startNumber, step, indexHiddenElement).toString();
 
@@ -38,5 +38,5 @@ const generateTask = () => {
 };
 
 export default () => {
-  startGame(TASK_TEXT, generateTask, isValidAnswer);
+  startGame(taskText, generateTask, isValidAnswer);
 };

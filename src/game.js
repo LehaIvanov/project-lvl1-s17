@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getCorrectAnswer, getText as getQuestion } from './task';
 
-const GAME_ROUNDS_COUNT = 3;
+const gameRoundsCount = 3;
 
 const consoleReadline = message => readlineSync.question(message);
 
@@ -41,11 +41,11 @@ export default (taskText, generateTask, isValidAnswer, log = consoleLog,
 
   log(`Hello, ${userName}!\n`);
 
-  while (index < GAME_ROUNDS_COUNT && iterGame(log, readline, isValidAnswer, generateTask())) {
+  while (index < gameRoundsCount && iterGame(log, readline, isValidAnswer, generateTask())) {
     index += 1;
   }
 
-  if (index === GAME_ROUNDS_COUNT) {
+  if (index === gameRoundsCount) {
     log(`Congratulations, ${userName}!\n`);
   } else {
     log(`Let's try again, ${userName}!`);

@@ -2,9 +2,9 @@ import { cons as consTask } from './../task';
 import random from './../random';
 import startGame from './../game';
 
-const MIN_NUMBER = 1;
-const MAX_NUMBER = 100;
-const TASK_TEXT = 'Find the greatest common divisor of given numbers.';
+const minNumber = 1;
+const maxNumber = 100;
+const taskText = 'Find the greatest common divisor of given numbers.';
 
 const isValidAnswer = answer => answer !== '';
 
@@ -34,8 +34,8 @@ const getGcd = (a, b) => {
 };
 
 const generateTask = () => {
-  const number1 = random(MIN_NUMBER, MAX_NUMBER);
-  const number2 = random(MIN_NUMBER, MAX_NUMBER);
+  const number1 = random(minNumber, maxNumber);
+  const number2 = random(minNumber, maxNumber);
   const question = `${number1} ${number2}`;
   const correctAnswer = getGcd(number1, number2).toString();
 
@@ -43,5 +43,5 @@ const generateTask = () => {
 };
 
 export default () => {
-  startGame(TASK_TEXT, generateTask, isValidAnswer);
+  startGame(taskText, generateTask, isValidAnswer);
 };
